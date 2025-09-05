@@ -156,7 +156,7 @@
             if (!btn || !nav) return;
 
             btn.addEventListener('click', function () {
-                const open = btn.classList.toggle('is-open');
+                const open = nav.classList.toggle('is-open');
                 nav.classList.toggle('is-open', open);
                 btn.setAttribute('aria-expanded', String(open));
             });
@@ -164,7 +164,7 @@
             // close after clicking a link
             nav.querySelectorAll('a').forEach(a => {
                 a.addEventListener('click', () => {
-                    btn.classList.remove('is-open');
+
                     nav.classList.remove('is-open');
                     btn.setAttribute('aria-expanded', 'false');
                 });
