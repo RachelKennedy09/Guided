@@ -15,8 +15,15 @@
         <nav class="navbar">
             <div class="logo">
                 <a href="index.html">guided</a>
-
             </div>
+
+            <!-- ADDED: hamburger button (mobile only) -->
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -141,6 +148,29 @@
         </nav>
     </footer>
 
+    <!-- ADDED: tiny JS to toggle the mobile menu -->
+    <script>
+        (function () {
+            const btn = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('.nav-links');
+            if (!btn || !nav) return;
+
+            btn.addEventListener('click', function () {
+                const open = btn.classList.toggle('is-open');
+                nav.classList.toggle('is-open', open);
+                btn.setAttribute('aria-expanded', String(open));
+            });
+
+            // close after clicking a link
+            nav.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => {
+                    btn.classList.remove('is-open');
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        })();
+    </script>
 
     <!-- FEES AND POLICY PAGE, PUBLICATION PAGE (LINKS)
      CANADA PSYCHIATRY LICENSE -->
