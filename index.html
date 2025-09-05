@@ -37,11 +37,12 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero" style="background-image:url('images/hero3.jpg?v=2')">
+    <section id="hero" class="hero" style="background-image:url('images/hero1.png?v=2')">
         <div class="hero-content">
-            <h1>Transformational Ketamine Therapy</h1>
-            <p>Safe, professional treatment for trauma, depression, and healing — in a calming environment designed for
-                growth.</p>
+            <h1>guided psychotherapy</h1>
+            <p>Offering psychedelic assisted therapy for a variety of mental health conditions
+                to support you through your healing journey
+            </p>
             <a href="#contact" class="btn">Book a Consultation</a>
         </div>
     </section>
@@ -136,47 +137,48 @@
 
     <!-- CONTACT SECTION -->
 
-<!-- CONTACT SECTION -->
-<section id="contact" class="contact">
-  <h1>Contact</h1>
-  <p class="contact-intro">
-    Please share your email and we’ll reach out. <strong>Do not include any personal health information.</strong>
-  </p>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
+        <h1>Contact</h1>
+        <p class="contact-intro">
+            Please share your email and we’ll reach out. <strong>Do not include any personal health
+                information.</strong>
+        </p>
 
-  <form id="contact-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST" novalidate>
-    <!-- Email only -->
-    <label class="field">
-      <span>Email</span>
-      <input type="email" name="email" placeholder="you@example.com" required>
-    </label>
+        <form id="contact-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST" novalidate>
+            <!-- Email only -->
+            <label class="field">
+                <span>Email</span>
+                <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
 
-    <!-- Optional: a simple spam honeypot (kept hidden) -->
-    <input type="text" name="_honey" style="display:none">
+            <!-- Optional: a simple spam honeypot (kept hidden) -->
+            <input type="text" name="_honey" style="display:none">
 
-    <!-- Email subject (what Christine will see in her inbox) -->
-    <input type="hidden" name="_subject" value="Guided — Contact Request">
+            <!-- Email subject (what Christine will see in her inbox) -->
+            <input type="hidden" name="_subject" value="Guided — Contact Request">
 
-    <!-- Consent / disclaimer -->
-    <label class="consent">
-      <input type="checkbox" required>
-      I agree to be contacted by email and will not include personal health information.
-    </label>
+            <!-- Consent / disclaimer -->
+            <label class="consent">
+                <input type="checkbox" required>
+                I agree to be contacted by email and will not include personal health information.
+            </label>
 
-    <button type="submit" class="btn">Request an email back</button>
+            <button type="submit" class="btn">Request an email back</button>
 
-    <!-- Live status message -->
-    <p class="form-status" role="status" aria-live="polite"></p>
+            <!-- Live status message -->
+            <p class="form-status" role="status" aria-live="polite"></p>
 
-    <!-- No-JS fallback -->
-    <noscript>
-      <p><em>JavaScript is off. After you submit, you’ll be taken to a confirmation page.</em></p>
-    </noscript>
-  </form>
+            <!-- No-JS fallback -->
+            <noscript>
+                <p><em>JavaScript is off. After you submit, you’ll be taken to a confirmation page.</em></p>
+            </noscript>
+        </form>
 
-  <p class="contact-privacy">
-    We do not store medical information on this website. Appointment details are handled securely offline.
-  </p>
-</section>
+        <p class="contact-privacy">
+            We do not store medical information on this website. Appointment details are handled securely offline.
+        </p>
+    </section>
 
 
 
@@ -215,37 +217,39 @@
         })();
     </script>
 
+
+    <!-- FORMSPREE - need to set up an account (free)...see details -->
     <script>
-  (function () {
-    const form = document.getElementById('contact-form');
-    if (!form) return;
-    const statusEl = form.querySelector('.form-status');
+        (function () {
+            const form = document.getElementById('contact-form');
+            if (!form) return;
+            const statusEl = form.querySelector('.form-status');
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      statusEl.textContent = 'Sending…';
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                statusEl.textContent = 'Sending…';
 
-      try {
-        const data = new FormData(form);
-        const resp = await fetch(form.action, {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: data
-        });
+                try {
+                    const data = new FormData(form);
+                    const resp = await fetch(form.action, {
+                        method: 'POST',
+                        headers: { 'Accept': 'application/json' },
+                        body: data
+                    });
 
-        if (resp.ok) {
-          form.reset();
-          statusEl.textContent = "Thank you — we'll email you shortly.";
-        } else {
-          const err = await resp.json().catch(() => ({}));
-          statusEl.textContent = (err.errors && err.errors.map(e => e.message).join(', ')) || 'Oops, there was a problem. Please try again.';
-        }
-      } catch (err) {
-        statusEl.textContent = 'Network error — please try again.';
-      }
-    });
-  })();
-</script>
+                    if (resp.ok) {
+                        form.reset();
+                        statusEl.textContent = "Thank you — we'll email you shortly.";
+                    } else {
+                        const err = await resp.json().catch(() => ({}));
+                        statusEl.textContent = (err.errors && err.errors.map(e => e.message).join(', ')) || 'Oops, there was a problem. Please try again.';
+                    }
+                } catch (err) {
+                    statusEl.textContent = 'Network error — please try again.';
+                }
+            });
+        })();
+    </script>
 
 
     <!-- FEES AND POLICY PAGE, PUBLICATION PAGE (LINKS)
