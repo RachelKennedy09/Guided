@@ -247,7 +247,7 @@ a:hover {
   width: 24px;
   height: 2px;
   background: #5e5b52;
-  margin: 3px 0; /* was 4px; slightly tighter works better with the rotate */
+  margin: 3px 0; 
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
