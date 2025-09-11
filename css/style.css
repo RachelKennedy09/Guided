@@ -245,36 +245,35 @@ a:hover {
   margin-top: 0.25rem;
 }
 
-/* FOOTER and COPYRIGHT */
 .site-footer {
-  background-color: #dce1db; /* same soft sage as navbar */
-  color: #333;
+  background-color: #dce1db;
+  padding: 20px;
   text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  border-top: 1px solid #bfc4bd;
-}
-
-.site-footer p {
-  margin: 0.5rem 0;
-}
-
-.footer-links {
-  margin-top: 0.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
 }
 
 .footer-links a {
-  color: #5e5b52; /* earthy gray */
-  text-decoration: none;
-  font-size: 0.9rem;
+  margin: 0 10px;
 }
 
-.footer-links a:hover {
-  color: #806f8b; /* violet hover */
+.footer-flags {
+  margin-top: 15px;
 }
+
+.footer-flag {
+  height: 40px;
+  margin: 0 8px;
+}
+
+.footer-treaty {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #444;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 
 @media (min-width: 768px) {
   .profile {
