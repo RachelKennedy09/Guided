@@ -267,14 +267,14 @@ a:hover {
 .footer-flags {
   display: flex;
   justify-content: center; /* center across footer */
-  gap: clamp(0.5rem, 2vw, 2rem); /* spacing that shrinks on mobile */
-  flex-wrap: nowrap; /* force them to stay in one row */
-  overflow-x: auto; /* allow scrolling if screen is super small */
+  gap: 1rem; /* spacing that shrinks on mobile */
+  flex-wrap: wrap; /* force them to stay in one row */
+  /* allow scrolling if screen is super small */
 }
 
 .footer-flags img {
   width: 6rem; /* min 18px, grows to 28px max */
-  height: auto;
+  height: 3rem;
   margin-right: 0.5rem;
 }
 
