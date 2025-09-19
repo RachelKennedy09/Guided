@@ -272,16 +272,8 @@ a:hover {
   overflow-x: auto; /* allow scrolling if screen is super small */
 }
 
-.footer-flags p {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  font-size: clamp(0.75rem, 2vw, 1rem); /* text scales with screen size */
-  white-space: nowrap; /* prevent text from wrapping */
-}
-
 .footer-flags img {
-  width: clamp(18px, 4vw, 28px); /* min 18px, grows to 28px max */
+  width: 6rem; /* min 18px, grows to 28px max */
   height: auto;
   margin-right: 0.5rem;
 }
