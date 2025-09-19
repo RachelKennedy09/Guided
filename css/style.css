@@ -261,7 +261,8 @@ a:hover {
 }
 
 .footer-links a {
-  margin: 0 10px;
+  margin: 20px;
+  margin-bottom: 20px;
 }
 
 .footer-flags {
@@ -276,7 +277,7 @@ a:hover {
   width: 6rem; /* min 18px, grows to 28px max */
   height: 3rem;
   margin-right: 0.5rem;
-  
+  margin-top: 0.5rem;
 }
 
 .footer-treaty {
