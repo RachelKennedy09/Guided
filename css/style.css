@@ -264,28 +264,26 @@ a:hover {
   margin: 0 10px;
 }
 
+.footer-flags {
+  display: flex;
+  justify-content: center; /* center across footer */
+  gap: clamp(0.5rem, 2vw, 2rem); /* spacing that shrinks on mobile */
+  flex-wrap: nowrap; /* force them to stay in one row */
+  overflow-x: auto; /* allow scrolling if screen is super small */
+}
+
 .footer-flags p {
   display: flex;
-
-  align-items: center; /* vertically aligns them */
+  align-items: center;
   margin: 0;
   font-size: clamp(0.75rem, 2vw, 1rem); /* text scales with screen size */
-  white-space: nowrap;
+  white-space: nowrap; /* prevent text from wrapping */
 }
 
 .footer-flags img {
-  height: 80px; /* shrink image so it’s icon-sized */
-  margin-right: 8px;
-  padding: 10px; /* space between image and text */
-}
-
-.footer-flags {
-  display: flex; /* put each <p> side by side */
-  justify-content: center; /* center them in the footer */
-  gap: clamp(0.5rem, 2vw, 2rem); /* space between each item */
-  flex-wrap: nowrap; /* allow wrapping on smaller screens */
+  width: clamp(18px, 4vw, 28px); /* min 18px, grows to 28px max */
   height: auto;
-  overflow-x: auto;
+  margin-right: 0.5rem;
 }
 
 .footer-treaty {
