@@ -284,6 +284,7 @@ a:hover {
   justify-content: center; /* center them in the footer */
   gap: clamp(0.5rem, 2vw, 2rem); /* space between each item */
   flex-wrap: nowrap; /* allow wrapping on smaller screens */
+  height: auto;
   overflow-x: auto;
 }
 
