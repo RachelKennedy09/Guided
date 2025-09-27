@@ -36,33 +36,67 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero" style="background-image:url('images/hero_background_web.jpg?v=2')">
-        <div class="hero-content">
-            <h1>Guided Psychotherapy Collective</h1>
-            <p>Welcome to Guided <br>
-                We are dedicated to accompany you on your healing journey
-            </p>
-            <a href="#contact" class="btn">Book a Consultation</a>
-        </div>
-    </section>
+ <section id="hero" class="hero">
+  <!-- Video layer -->
+  <div class="hero-bg" aria-hidden="true">
+    <video
+      class="hero-video"
+      playsinline
+      muted
+      loop
+      autoplay
+      preload="metadata"
+      poster="images/hero_background_web.jpg?v=2"
+    >
+      <!-- Put your downloaded Pexels MP4 into /videos and update the filename -->
+      <source src="/images/videos/2330728-uhd_3840_2160_24fps.mp4" type="video/mp4" />
+      <!-- Optional extra sources for better compatibility -->
+      <!-- <source src="videos/pexels-hero.webm" type="video/webm" /> -->
+    </video>
+  </div>
+
+  <!-- Optional gradient overlay to keep text readable -->
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <h1>Guided Psychotherapy Collective</h1>
+    <p>
+      Welcome to Guided <br />
+      We are dedicated to accompany you on your healing journey
+    </p>
+    <a href="#contact" class="btn">Book a Consultation</a>
+  </div>
+
+  <!-- No-JS fallback image -->
+  <noscript>
+    <style>.hero-bg { display:none !important; }</style>
+    <div class="hero-fallback" style="background-image:url('images/hero_background_web.jpg?v=2')"></div>
+  </noscript>
+</section>
+
 
     <!-- ABOUT THE CLINIC SECTION  -->
-    <section id="about" class="about">
-        <h1>About Guided</h1>
-        <p>We strive to offer a safe space in which together we can seek deeper connection with
-            oneself and explore what you may be seeking, be that reduced suffering, growth, understanding, or healing.
-            <br><br>
-            Through an emotionally and attachment focused lens, along with utilizing acceptance and commitment and
-            psychodynamic therapy tools, we can work with you
-            through a traditional psychotherapy framework or with the assistance of psychedelic medicines.
-            <br><br>
-            We have years of personal and professional experience with psychedelics and are grateful these medicines are
-            now becoming
-            more accessible as one avenue to help with mental health conditions.
-            <br><br>
-        </p>
-    </section>
+  <section id="about" class="about">
+  <div class="bubble">
+    <h1>About Guided</h1>
+    <p>
+      We strive to offer a safe space in which together we can seek deeper
+      connection with oneself and explore what you may be seeking, be that
+      reduced suffering, growth, understanding, or healing.
+      <br><br>
+      Through an emotionally and attachment focused lens, along with utilizing
+      acceptance and commitment and psychodynamic therapy tools, we can work
+      with you through a traditional psychotherapy framework or with the
+      assistance of psychedelic medicines.
+      <br><br>
+      We have years of personal and professional experience with psychedelics
+      and are grateful these medicines are now becoming more accessible as one
+      avenue to help with mental health conditions.
+    </p>
+  </div>
+</section>
+
     <!-- DOCTOR BIOGRAPHIES -->
     <section id="bios" class="bios">
         <div class="profile">

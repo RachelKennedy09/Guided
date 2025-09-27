@@ -29,14 +29,14 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #dce1db; /* soft sage */
+  background-color: #806f8b;; /* soft sage */
   padding: 1rem 2rem;
 }
 
 .logo {
   font-weight: bold;
   font-size: 1.5rem;
-  color: #5e5b52; /* earthy gray */
+  color: #545146; /* earthy gray */
 }
 
 .logo a {
@@ -61,38 +61,79 @@ a {
 
 /* Hero Section */
 
+/* HERO LAYOUT */
 .hero {
-  background-image: url("images/hero_background_web.jpg");
-  background-size: cover; /* makes it fill the section */
-  background-position: center; /* keeps it centered */
-  background-repeat: no-repeat;
-  min-height: 100vh; /* full screen height */
-
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+  position: relative;
+  min-height: 100vh;            /* adjust to taste (70–100vh) */
+  display: grid;
+  place-items: center;         /* centers .hero-content */
   text-align: center;
-  padding: 2rem;
+  overflow: clip;              /* hides any video overflow cleanly */
 }
 
+/* Video layer fills the section */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;                  /* sits behind content & overlay */
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* fills the hero like a background image */
+}
+
+/* Optional gradient to improve text contrast on busy footage */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;                  /* above video, below content */
+  pointer-events: none;
+  /* top: darker → bottom: clearer; tweak to taste */
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.35) 0%,
+    rgba(0,0,0,0.15) 40%,
+    rgba(0,0,0,0.00) 100%
+  );
+}
+
+/* Content sits above everything */
 .hero-content {
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 2rem;
-  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+  color: #fff;                 /* white type on video */
+  padding: 3rem 1rem;
+  max-width: 60ch;
+  font-size: x-large;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font: "Georgia", serif;
+/* No-JS fallback (if you want a CSS-driven background image) */
+.hero-fallback {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+/* Accessibility: respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    animation: none !important;
+  }
+  .hero-video[autoplay] {
+    /* Pause the video if the user prefers reduced motion */
+    /* Can't pause via CSS, but we can stop autoplay by removing it from HTML if you want.
+       Or keep poster visible by not loading the full video on low-motion devices. */
+  }
 }
+
+/* Ensure your navbar stays readable if it overlaps hero (if header is fixed) */
+.navbar a { color: #fff; }  /* optional; only if needed */
+
 
 .btn {
   background-color: #806f8b; /* soft violet */
@@ -117,19 +158,42 @@ body.about-page {
 .about {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(to bottom, #dcd8cf, #f5f3ee);
-  padding: 4rem 2rem;
+  /* set the photo behind */
+  background-image: url("/images/hero_background_web.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* optional parallax effect */
+
   display: flex;
   flex-direction: column;
   gap: 2rem;
   max-width: 900px;
   margin: 80px auto;
   border-radius: 5%;
+  position: relative;
+  z-index: 0;
+}
+
+/* Bubble wrapper */
+.about .bubble {
+  background: rgba(255, 255, 255, 0.85); /* translucent white */
+  backdrop-filter: blur(6px);            /* frosted glass effect */
+  -webkit-backdrop-filter: blur(6px);    /* Safari support */
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 70ch;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.about h1 {
+  margin-bottom: 1rem;
 }
 
 .about p {
-  max-width: 70ch;
-  margin: 0 auto;
+  margin: 0;
+  line-height: 1.6;
+  color: #222; /* ensure good contrast */
 }
 .bios {
   padding: 2rem;
