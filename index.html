@@ -22,13 +22,11 @@
             </div>
 
             <!-- ADDED: hamburger button (mobile only) -->
-            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="primary-navigation">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
             </button>
-
-            <ul class="nav-links">
+            <ul id="primary-navigation" class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#bios">Bios</a></li>
@@ -361,25 +359,37 @@
     <script>
         (function () {
             const btn = document.querySelector('.menu-toggle');
-            const nav = document.querySelector('.nav-links');
+            const nav = document.getElementById('primary-navigation');
             if (!btn || !nav) return;
 
-            btn.addEventListener('click', function () {
-                const open = nav.classList.toggle('is-open');
+            function closeMenu() {
+                nav.classList.remove('is-open');
+                btn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = ''; // release scroll lock
+            }
+
+            btn.addEventListener('click', () => {
+                const open = !nav.classList.contains('is-open');
                 nav.classList.toggle('is-open', open);
                 btn.setAttribute('aria-expanded', String(open));
+                // optional: lock body scroll when menu is open on small screens
+                document.body.style.overflow = open ? 'hidden' : '';
             });
 
             // close after clicking a link
             nav.querySelectorAll('a').forEach(a => {
-                a.addEventListener('click', () => {
+                a.addEventListener('click', closeMenu);
+            });
 
-                    nav.classList.remove('is-open');
-                    btn.setAttribute('aria-expanded', 'false');
-                });
+            // close if you tap outside the nav when open
+            document.addEventListener('click', (e) => {
+                if (!nav.classList.contains('is-open')) return;
+                const inside = nav.contains(e.target) || btn.contains(e.target);
+                if (!inside) closeMenu();
             });
         })();
     </script>
+
 
 
     <!-- FORMSPREE - need to set up an account (free)...see details -->

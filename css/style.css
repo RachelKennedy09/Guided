@@ -53,6 +53,7 @@ a {
   align-items: center;
   background-color: var(--violet);
   padding: 1rem 2rem;
+  z-index: 1001;
 }
 .logo {
   font-weight: bold;
@@ -71,12 +72,33 @@ a {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  z-index: 1001;
 }
 .navbar a {
   color: #fff;
 } /* keep links readable on violet */
 .nav-links li a:hover {
   opacity: 0.9;
+}
+
+header {
+  position: sticky; /* stays at the top on scroll */
+  top: 0;
+  z-index: 1000;
+}
+@media (max-width: 900px) {
+  .navbar {
+    position: relative;
+  }
+  .navbar .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: var(--beige);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
 }
 
 /* ---------- Hero ---------- */
@@ -521,6 +543,13 @@ a {
   .menu-toggle {
     display: flex;
   }
+  .navbar .nav-links a {
+    color: var(--text); /* dark text on light bg */
+  }
+  .navbar .nav-links a:hover {
+    color: var(--violet-dark);
+    opacity: 1;
+  }
 
   .navbar .nav-links {
     position: absolute;
@@ -534,8 +563,54 @@ a {
     display: none;
     flex-direction: column;
     gap: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   }
   .navbar .nav-links.is-open {
     display: flex;
+  }
+}
+
+/* --- Unified background section stacking + overlay --- */
+.about,
+.profile,
+.services,
+.contact {
+  position: relative;
+  isolation: isolate; /* contains z-index inside the section */
+}
+
+/* Soft tint so text always reads, without washing it out */
+.about::before,
+.profile::before,
+.services::before,
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0; /* sits under the text/content */
+  background: linear-gradient(
+      /* top subtle gradient for readability */ to bottom,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0.04) 35%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    rgba(255, 255, 255, 0.3); /* soft white tint over photo */
+}
+
+/* Ensure all inner content is drawn above overlay */
+.about-text,
+.profile-text,
+.section-card {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile/iOS fix for background-attachment */
+@media (max-width: 1024px), (prefers-reduced-motion: reduce) {
+  .about,
+  .profile,
+  .services,
+  .contact {
+    background-attachment: scroll !important;
   }
 }
