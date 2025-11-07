@@ -398,6 +398,13 @@ a {
   outline-offset: 2px;
 }
 
+@media (max-width: 1024px), (prefers-reduced-motion: reduce) {
+  .services,
+  .contact {
+    background-attachment: scroll; /* prevents low-res snapshot effect */
+  }
+}
+
 /* ---------- Contact ---------- */
 .contact {
   position: relative;
