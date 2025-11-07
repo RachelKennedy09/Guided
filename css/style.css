@@ -29,7 +29,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #806f8b;; /* soft sage */
+  background-color: #806f8b; /* soft sage */
   padding: 1rem 2rem;
 }
 
@@ -64,39 +64,39 @@ a {
 /* HERO LAYOUT */
 .hero {
   position: relative;
-  min-height: 100vh;            /* adjust to taste (70–100vh) */
+  min-height: 100vh; /* adjust to taste (70–100vh) */
   display: grid;
-  place-items: center;         /* centers .hero-content */
+  place-items: center; /* centers .hero-content */
   text-align: center;
-  overflow: clip;              /* hides any video overflow cleanly */
+  overflow: clip; /* hides any video overflow cleanly */
 }
 
 /* Video layer fills the section */
 .hero-bg {
   position: absolute;
   inset: 0;
-  z-index: 0;                  /* sits behind content & overlay */
+  z-index: 0; /* sits behind content & overlay */
   overflow: hidden;
 }
 
 .hero-video {
   width: 100%;
   height: 100%;
-  object-fit: cover;           /* fills the hero like a background image */
+  object-fit: cover; /* fills the hero like a background image */
 }
 
 /* Optional gradient to improve text contrast on busy footage */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  z-index: 1;                  /* above video, below content */
+  z-index: 1; /* above video, below content */
   pointer-events: none;
   /* top: darker → bottom: clearer; tweak to taste */
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.35) 0%,
-    rgba(0,0,0,0.15) 40%,
-    rgba(0,0,0,0.00) 100%
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.15) 40%,
+    rgba(0, 0, 0, 0) 100%
   );
 }
 
@@ -104,7 +104,7 @@ a {
 .hero-content {
   position: relative;
   z-index: 2;
-  color: #fff;                 /* white type on video */
+  color: #fff; /* white type on video */
   padding: 3rem 1rem;
   max-width: 60ch;
   font-size: x-large;
@@ -132,8 +132,9 @@ a {
 }
 
 /* Ensure your navbar stays readable if it overlaps hero (if header is fixed) */
-.navbar a { color: #fff; }  /* optional; only if needed */
-
+.navbar a {
+  color: #fff;
+} /* optional; only if needed */
 
 .btn {
   background-color: #806f8b; /* soft violet */
@@ -177,13 +178,13 @@ body.about-page {
 /* Bubble wrapper */
 .about .bubble {
   background: rgba(255, 255, 255, 0.85); /* translucent white */
-  backdrop-filter: blur(6px);            /* frosted glass effect */
-  -webkit-backdrop-filter: blur(6px);    /* Safari support */
+  backdrop-filter: blur(6px); /* frosted glass effect */
+  -webkit-backdrop-filter: blur(6px); /* Safari support */
   border-radius: 1rem;
   padding: 2rem;
   margin: 0 auto;
   max-width: 70ch;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .about h1 {
@@ -204,19 +205,66 @@ body.about-page {
   margin: 0 auto 80px;
 }
 
+/* =======================
+   Forest backgrounds on bios
+   ======================= */
 .profile {
+  position: relative;
+  background: var(--bg-image) center/cover no-repeat;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 2rem;
+  color: #222;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   align-items: center;
+  gap: 1.5rem;
+  background-attachment: fixed; /* like your About section */
 }
 
+/* ensure text and photo are above overlay */
 .profile img {
-  width: 100%;
+  position: relative;
+  z-index: 1;
   max-width: 300px;
   border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+.profile-text {
+  background: rgba(255, 255, 255, 0.75); /* translucent white */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+}
+.profile-text h2 {
+  margin-top: 0;
+  color: #2a461e; /* earthy tone */
+}
+
+.profile-text p {
+  margin-bottom: 0;
+  color: #222;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .profile img {
+    flex-shrink: 0;
+  }
+
+  .profile-text {
+    background: rgba(255, 255, 255, 0.6);
+  }
 }
 
 /* services offered */
@@ -237,7 +285,7 @@ body.about-page {
   border-radius: 12px;
   background: #fff;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 .service > summary {
@@ -249,7 +297,9 @@ body.about-page {
   outline: none;
 }
 
-.service > summary::-webkit-details-marker { display: none; }
+.service > summary::-webkit-details-marker {
+  display: none;
+}
 
 /* caret */
 .service > summary::after {
@@ -270,7 +320,7 @@ body.about-page {
 
 /* focus-visible for accessibility */
 .service > summary:focus-visible {
-  box-shadow: 0 0 0 3px rgba(128,111,139,0.35);
+  box-shadow: 0 0 0 3px rgba(128, 111, 139, 0.35);
   border-radius: 10px;
 }
 
@@ -321,17 +371,43 @@ body.about-page {
   max-width: 70ch;
   margin-left: auto;
   margin-right: auto;
-} 0 auto;
+}
+/* Special Access Program link — make it stand out */
+.sap-link {
+  display: inline-block;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: #806f8b; /* your violet */
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  transition: transform 0.06s ease, box-shadow 0.2s ease, background 0.2s ease;
+  position: relative;
 }
 
-/* canada's special access button  */
-a {
-  color: #806f8b; /* violet, fits your palette */
-  text-decoration: underline;
+/* small external-link arrow */
+.sap-link::after {
+  content: "↗";
+  font-size: 0.9em;
+  margin-left: 0.4rem;
+  opacity: 0.9;
 }
 
-a:hover {
-  color: #5e4a66; /* darker violet on hover */
+.sap-link:hover {
+  background: #5e4a66; /* darker violet */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+}
+
+.sap-link:active {
+  transform: translateY(1px);
+}
+
+.sap-link:focus-visible {
+  outline: 3px solid rgba(128, 111, 139, 0.35);
+  outline-offset: 2px;
+  text-decoration: none;
 }
 
 /* CONTACT */
