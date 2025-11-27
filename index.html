@@ -39,23 +39,22 @@
     <section id="hero" class="hero">
         <!-- Video layer -->
         <div class="hero-bg" aria-hidden="true">
-            <video class="hero-video" playsinline muted loop autoplay preload="metadata"
-                poster="images/hero_background_web.jpg?v=2">
-                <!-- Put your downloaded Pexels MP4 into /videos and update the filename -->
-                <source src="/images/videos/2330728-uhd_3840_2160_24fps.mp4" type="video/mp4" />
-                <!-- Optional extra sources for better compatibility -->
-                <!-- <source src="videos/pexels-hero.webm" type="video/webm" /> -->
+            <!-- Still image from the video -->
+            <img src="images/hero_video_still.jpg" alt="" class="hero-still" />
+            <!-- actual video  -->
+            <video class="hero-video" playsinline muted loop preload="auto">
+                <source src="/images/videos/NewHeroVideo.mp4" type="video/mp4" />
             </video>
         </div>
-
-        <!-- Optional gradient overlay to keep text readable -->
+        <!-- optional gradient overlay -->
         <div class="hero-overlay" aria-hidden="true"></div>
+
 
         <!-- Content -->
         <div class="hero-content">
             <h1>Guided Therapy Collective</h1>
             <p>
-                Welcome to Guided - We are glad you're here
+                Welcome to Guided - We're glad you're here
             </p>
             <a href="#contact" class="btn">Book a Consultation</a>
         </div>
@@ -67,7 +66,7 @@
                     display: none !important;
                 }
             </style>
-            <div class="hero-fallback" style="background-image:url('images/hero_background_web.jpg?v=2')"></div>
+            <div class="hero-fallback" style="background-image:url('images/hero_video_still.jpg')"></div>
         </noscript>
     </section>
 
@@ -77,8 +76,8 @@
         <div class="about-text">
             <h1>About Guided</h1>
             <p>
-                We strive to offer a safe space in which together we can seek deeper
-                connection with oneself and explore what you may be seeking, be that
+                We strive to offer a safe space in which, together, we can seek a deeper
+                connection with the self. Here, you can explore what you may be seeking, be that
                 reduced suffering, growth, understanding, or healing.
                 <br><br>
                 Through an emotionally and attachment focused lens, along with utilizing
@@ -86,7 +85,7 @@
                 with you through a traditional psychotherapy framework or with the
                 assistance of psychedelic medicines.
                 <br><br>
-                We have years of personal and professional experience with psychedelics
+                We have dedicated our time to this healing experience with psychedelics
                 and are grateful these medicines are now becoming more accessible as one
                 avenue to help with mental health conditions.
             </p>
@@ -98,18 +97,18 @@
         <div class="profile" style="--bg-image: url('../images/hero_background_web.jpg')">
             <img src="images/AboutChristine.jpg" alt="Dr. Christine profile photo" />
             <div class="profile-text">
-                <h2>Dr. Christine Kennedy, MD, FRCPC Psychiatry</h2>
+                <h2>Dr. Christine Kennedy, MD, FRCPC, Psychiatry</h2>
                 <p>Thank you for your curiosity and seeking an avenue of healing that feels aligned with you.
                     <br><br>
                     I am grateful to live and work on the unceded traditional territory of the Lheidli T'enneh Nation. I
-                    was raised in the North and am honored to continue to serve and work with people in Northern BC. I
-                    am a psychiatrist and in my general practice I offer psychodynamic therapy with a relational
-                    approach, focussing on attachment and emotional processing.
+                    was raised in the North and am honored to continue to serve and work with people in Northern BC. In
+                    my general practice I offer psychodynamic therapy with a relational
+                    approach, focusing on attachment and emotional processing.
                     <br><br>
                     I am passionate about the use of psychedelics as a way of opening one's heart and mind to what lies
                     beyond their defenses that have evolved from years of suffering. Psychedelic healing can be a
                     spiritual, deeply connected experience and I strive to create an environment that offers the
-                    opportunity for people to explore these depths. Then, with supportive integration of these
+                    opportunity for people to explore these depths. With supportive integration of these
                     experiences, there can be healing and growth within their lives and relationships.
                     <br><br>
                     I look forward to seeing if working together in this realm is the right fit at the right time.
@@ -135,12 +134,12 @@
             <img src="images/you.jpg" alt="Dr. Laura Fisher" />
             <div class="profile-text">
                 <h2>Dr. Laura Fisher </h2>
-                <p> A warm welcome to our space that supports community and connection.
+                <p> Welcome to a space that supports community and connection.
                     <br><br>
 
-                    I’m a registered nurse who began my career in my 40s on Vancouver’s Downtown Eastside, working in
+                    I’m a registered nurse who began my career on Vancouver’s Downtown Eastside, working in
                     addictions and mental health. Four years ago, I moved to Prince George to be closer to nature and
-                    community, and for the past two years I’ve specialized as a Ketamine-Assisted Therapist, with
+                    community. For the past two years I’ve specialized as a Ketamine-Assisted Therapist, with
                     additional training in psilocybin and MDMA therapy through Therapsil. I am currently working toward
                     my Masters in Counselling at UNBC.
                     <br><br>
@@ -164,10 +163,12 @@
                 Ketamine is available without requiring special access from Health Canada. Psilocybin and MDMA are
                 available
                 for those that qualify for these treatments through Canada's
+                <br><br>
                 <a class="sap-link"
                     href="https://www.canada.ca/en/health-canada/services/drugs-health-products/special-access/drugs.html"
                     target="_blank" rel="noopener noreferrer"
                     aria-label="Special Access Program (opens in a new tab)">Special Access Program</a>.
+                <br><br>
                 We are happy to help you connect to someone that will help you apply.
             </p>
 
@@ -178,25 +179,27 @@
                     <div class="service-content">
                         <h3>Individual Ketamine Therapy</h3>
                         <ul>
-                            <li>1× Consultation</li>
-                            <li>2× Preparation (may be group or individual)</li>
+                            <li>Consultation</li>
+                            <li>2× Preparation Sessions (Group or Individual)</li>
                             <li>3× Ketamine Treatment Sessions</li>
                             <li>2× Integration Sessions</li>
                             <li>Closing Session</li>
                         </ul>
-                        <p class="price">$2,975 <span class="note">(*with Dr.’s Referral $2,175)</span></p>
+                        <p class="price">*$2,975 <span class="note">(*2,175 with referral from primary care
+                                provider)</span></p>
 
                         <hr>
 
-                        <h3>Group Ketamine <small>(when available)</small></h3>
+                        <h3>Group Ketamine Therapy<small>(when available)</small></h3>
                         <ul>
-                            <li>1× Individual Consultation</li>
-                            <li>2× Group Preparation</li>
+                            <li>Individual Consultation</li>
+                            <li>2× Group Preparation Sessions</li>
                             <li>3× Group Ketamine Treatment Sessions</li>
                             <li>2× Group Integration Sessions</li>
-                            <li>1× Group Closing Session</li>
+                            <li>Group Closing Session</li>
                         </ul>
-                        <p class="price">$1,575 <span class="note">($1,175 with doctor’s referral)</span></p>
+                        <p class="price">*$1,575 <span class="note">(*$1,175 with referral from primary care
+                                provider)</span></p>
                     </div>
                 </details>
 
@@ -204,7 +207,8 @@
                 <details class="service">
                     <summary><b>Psilocybin-Assisted Therapy</b></summary>
                     <div class="service-content">
-                        <p>Available via Health Canada’s Special Access Program for eligible clients. We can help you
+                        <p>Available via Health Canada’s Special Access Program for eligible clients. We would be happy
+                            to help you
                             navigate the application process.</p>
                     </div>
                 </details>
@@ -283,7 +287,7 @@
         <div class="section-card">
             <h1>Contact</h1>
             <p class="contact-intro">
-                Please share your email and we’ll reach out. <strong>Do not include any personal health
+                Please share your email and we will reach out. <strong>Do not include any personal health
                     information.</strong>
             </p>
 
@@ -329,7 +333,7 @@
 
     <footer class="site-footer">
         <div class="footer-top">
-            <p>© 2025 Guided. All rights reserved.</p>
+            <p>© 2025 Guided Therapy Collective Inc. All rights reserved.</p>
             <nav class="footer-links">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
@@ -338,18 +342,18 @@
         </div>
 
         <div class="footer-flags">
-            <img src='./images/EveryChildMatters.png' />
-            <img src='./images/Pride.png' />
-            <img src='./images/BlaclLivesMatter.png' />
-
-
+            <img src="./images/EveryChildMatters.png" alt="Every Child Matters flag" />
+            <img src="./images/Pride.png" alt="Pride flag" />
+            <img src="./images/BlackLivesMatter.png" alt="Black Lives Matter flag" />
         </div>
 
         <div class="footer-treaty">
             <p>
-                We acknowledge that we live, work, and create on the traditional and unceded territories of the First
-                Nations of Canada, particularly here the Lheidli T'enneh Nation. We honour and commit to reconciliation,
-                respect, and the land back movement
+                We acknowledge that we live, work, and create on the traditional and unceded territories of the
+                Indigenous peoples of Canada. Guided Therapy Collective Inc. is situated in the traditional territories
+                of the Dakelh(Carrier) people of the Lheidli T'enneh First Nation. We honour and commit to
+                reconciliation,
+                respect, and the Land Back movement
             </p>
         </div>
     </footer>
@@ -438,6 +442,23 @@
         });
     </script>
 
+
+    <script>
+        (function () {
+            const heroBg = document.querySelector('.hero-bg');
+            const heroVideo = document.querySelector('.hero-video');
+            if (!heroBg || !heroVideo) return;
+
+            // When the video has enough data to start playing
+            heroVideo.addEventListener('canplay', () => {
+                heroBg.classList.add('is-ready');
+                // Try to start playback (some browsers are picky, but muted helps)
+                heroVideo.play().catch(() => {
+                    // If autoplay fails, you could show a play button if you ever want
+                });
+            });
+        })();
+    </script>
 
 
     <!-- FEES AND POLICY PAGE, PUBLICATION PAGE (LINKS)
