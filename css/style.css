@@ -50,9 +50,13 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--violet);
+  background-color: transparent; /* NEW */
   padding: 1rem 2rem;
   z-index: 1001;
+  position: absolute; /* NEW */
+  top: 0; /* NEW */
+  left: 0; /* NEW */
+  right: 0; /* NEW */
 }
 .logo {
   font-weight: bold;
@@ -81,9 +85,12 @@ a {
 }
 
 header {
-  position: sticky; /* stays at the top on scroll */
+  position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
+  background: transparent;
 }
 @media (max-width: 900px) {
   .navbar {
