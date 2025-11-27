@@ -118,7 +118,7 @@ header {
   display: grid;
   place-items: center;
   text-align: center;
-  overflow: clip;
+  overflow: hidden;
 }
 .hero-bg {
   position: absolute;
@@ -136,10 +136,13 @@ header {
   height: 100%;
   object-fit: cover;
   transition: opacity 800ms ease;
+  opacity: 0;
 }
+
 /* Start: still visible, video hidden */
 .hero-still {
   opacity: 1;
+  display: block; /* NEW: ensure it actually renders */
 }
 .hero-video {
   opacity: 0;
