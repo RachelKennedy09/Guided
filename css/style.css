@@ -703,6 +703,25 @@ header {
   z-index: 1;
 }
 
+/* Make all main sections full-width, with vertical spacing between them */
+.about,
+.bios,
+.services,
+.contact {
+  max-width: 100%;
+  margin: 80px 0; /* space above/below each section */
+  border-radius: 0; /* remove rounded corners so they touch screen edges */
+}
+
+/* Center and constrain the inner content blocks */
+.about-text,
+.profile,
+.services .section-card,
+.contact .section-card {
+  max-width: 900px;
+  margin: 0 auto; /* center within the full-width section */
+}
+
 /* Mobile/iOS fix for background-attachment */
 @media (max-width: 1024px), (prefers-reduced-motion: reduce) {
   .about,
@@ -710,5 +729,16 @@ header {
   .services,
   .contact {
     background-attachment: scroll !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .about,
+  .bios,
+  .services,
+  .contact {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin: 48px 0; /* slightly less gap on tiny screens, optional */
   }
 }
