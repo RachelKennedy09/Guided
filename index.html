@@ -292,14 +292,48 @@
             </p>
 
             <form id="contact-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST" novalidate>
+                <!-- Name -->
+                <label class="field">
+                    <span>Name</span>
+                    <input type="text" name="name" placeholder="Your name" required>
+                </label>
+
+                <!-- Place of residence -->
+                <label class="field">
+                    <span>Place of residence</span>
+                    <input type="text" name="location" placeholder="City / region (e.g., Prince George, BC)">
+                </label>
+
+                <!-- Service of interest -->
+                <label class="field">
+                    <span>Service you’re inquiring about</span>
+                    <select name="service" required>
+                        <option value="">Please select an option</option>
+                        <option value="Ketamine-Assisted Therapy">Ketamine-Assisted Therapy</option>
+                        <option value="Psilocybin-Assisted Therapy (via SAP)">Psilocybin-Assisted Therapy (via Special
+                            Access Program)</option>
+                        <option value="MDMA-Assisted Therapy (via SAP)">MDMA-Assisted Therapy (via Special Access
+                            Program)</option>
+                        <option value="Couples Therapy">Couples Therapy</option>
+                        <option value="Group Psychodynamic Therapy">Group Psychodynamic Therapy</option>
+                        <option value="Individual Psychodynamic Therapy">Individual Psychodynamic Therapy</option>
+                        <option value="Circle of Security Parenting Group">Circle of Security Parenting Group</option>
+                        <option value="General Outpatient / Psychotherapy">General Outpatient / Psychotherapy</option>
+                        <option value="Exploring options / not yet sure">I’m exploring options / not yet sure</option>
+                    </select>
+                </label>
+
+                <!-- Email -->
                 <label class="field">
                     <span>Email</span>
                     <input type="email" name="email" placeholder="you@example.com" required>
                 </label>
 
+                <!-- Honeypot + subject -->
                 <input type="text" name="_honey" style="display:none">
                 <input type="hidden" name="_subject" value="Guided — Contact Request">
 
+                <!-- Consent -->
                 <label class="consent">
                     <input type="checkbox" required>
                     I agree to be contacted by email and will not include personal health information online.
@@ -312,7 +346,6 @@
                     <p><em>JavaScript is off. After you submit, you’ll be taken to a confirmation page.</em></p>
                 </noscript>
             </form>
-
             <p class="contact-privacy">
                 We do not store medical information on this website. Appointment details are handled securely offline.
             </p>
